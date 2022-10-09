@@ -64,7 +64,7 @@ void div_nodes(stack_t **head, unsigned int counter);
 void mul_nodes(stack_t **head, unsigned int counter);
 
 /*print*/
-void m_print(stack_t **head, unsigned int line_number );
+void m_pint(stack_t **head, unsigned int line_number );
 
 /*Mutate*/
 void push_node(stack_t **head, unsigned int number);
@@ -73,7 +73,7 @@ void pall_node(stack_t **head, unsigned int number);
 void addnode(stack_t **head, int n);
 void f_swap(stack_t **head, unsigned int counter);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void f_rotl(stack_t **head, __attribute__((unused)) unsigned int counter);
 
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
