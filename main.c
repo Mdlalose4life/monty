@@ -1,8 +1,12 @@
 #include "monty.h"
-bus_t var = {NULL, NULL, NULL, 0};
+#include "monty.h"
+#include <stdio.h>
+#define _GNU_SOURCE
+#include <stdlib.h>
 
+bus_t var = {NULL, NULL, NULL, 0};
 /**
-* main - monty code interpreter
+* main - The control center of monty program
 * @argc: number of arguments
 * @argv: monty file location
 * Return: 0 on success

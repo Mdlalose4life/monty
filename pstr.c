@@ -1,31 +1,25 @@
 #include "monty.h"
 /**
- * f_pchar - prints the char at the top of the stack,
- * followed by a new line
- * @head: double pointer to stack's head
- * @counter: counts the lines executed.
- * Return: void
+ * f_pstr - prints the string starting at the top of the stack,
+ * followed by a new
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
 */
-void f_pchar(stack_t **head, unsigned int counter)
+void f_pstr(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
+	(void)counter;
 
 	temp = *head;
-	if (!temp)
+	while (temp)
 	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", counter);
-		fclose(var.file);
-		free(var.content);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
+		if (temp->n > 127 || temp->n <= 0)
+		{
+			break;
+		}
+		printf("%c", temp->n);
+		temp = temp->next;
 	}
-	if (temp->n > 127 || temp->n < 0)
-	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", counter);
-		fclose(var.file);
-		free(var.content);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	printf("%c\n", temp->n);
+	printf("\n");
 }
